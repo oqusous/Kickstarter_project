@@ -31,7 +31,7 @@ Out of the aforementioned features the following was created:
 - Categorical Features:
     - Converted to dummies: df[['category', 'staff_pick', 'country']]
 
-![Features Pair PLot](plot_download/pairplots.png)
+![Features Pair PLot](plot_downloads/pairplots.png)
 
 
 The following models were run:
