@@ -3,8 +3,12 @@
 The aim of this project is to build a Classification Model to predict whether or not a new project on Kickstarter will likely succeed or fail.
 
 Data was obtained from:
+
 https://webrobots.io/kickstarter-datasets/
-A total of 9338 points. Aim to keep 5000 or more (duplicates, Nans, etc...). The data had the following column:
+
+A total of 9338 points. Aim to keep 5000 or more (duplicates, Nans, etc...). 
+
+The data had the following column:
 ['backers_count', 'blurb', 'category', 'converted_pledged_amount', 'country', 'created_at', 'creator', 'currency', 'currency_symbol', 'currency_trailing_code', 'current_currency', 'deadline', ‘'disable_communication', 'friends', 'fx_rate', 'goal', 'id', 'is_backing', 'is_starrable', 'is_starred', 'launched_at', 'location', 'name', 'permissions', 'photo', 'pledged', 'profile', 'slug', 'source_url', 'spotlight', 'staff_pick', 'state', 'state_changed_at', 'static_usd_rate', 'urls', 'usd_pledged', 'usd_type']
 
 The final features chosen were:
@@ -27,7 +31,7 @@ Out of the aforementioned features the following was created:
 - Categorical Features:
     - Converted to dummies: df[['category', 'staff_pick', 'country']]
 
-!["Features Pair PLot"]("plot_download\pairplots.png")
+![Features Pair PLot](plot_download/pairplots.png)
 
 
 The following models were run:
