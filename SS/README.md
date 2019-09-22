@@ -26,14 +26,7 @@ Out of the aforementioned features the following was created:
     - outliers = df[(df['time_allowed'] > 5000) & (df['goal'] > 2e6)]
 - Categorical Features:
     - Converted to dummies: df[['category', 'staff_pick', 'country']]
-<<<<<<< HEAD
   
-=======
-
-![Features Pair PLot](plot_download\pair_plots.png)
-
-
->>>>>>> 6355954ef31d084ae3456471689bc84ee09373ad
 The following models were run:
 - Baseline model of dummyclassifier used which gave 63% accuracy
 - Random Forest with hyperparameter tuning using iterations and AUC vs Parameter range plots
@@ -54,7 +47,6 @@ The following can be used to improve on the model
 - Quantify quality of the project’s presentation through recognising the use of videos, images and rewards.
 - Monitor updates from project founders and number of backers/amount of pledges for first 10-20 days and quantify it as a feature.
 - Work on better classifying project categories and make them more uniform
-<<<<<<< HEAD
 
 
 
@@ -65,5 +57,3 @@ The following can be used to improve on the model
 
 
     
-=======
->>>>>>> 6355954ef31d084ae3456471689bc84ee09373ad
