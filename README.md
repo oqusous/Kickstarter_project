@@ -26,14 +26,10 @@ Out of the aforementioned features the following was created:
     - outliers = df[(df['time_allowed'] > 5000) & (df['goal'] > 2e6)]
 - Categorical Features:
     - Converted to dummies: df[['category', 'staff_pick', 'country']]
-<<<<<<< HEAD
-  
-=======
 
 ![Features Pair PLot](plot_download\pair_plots.png)
 
 
->>>>>>> 6355954ef31d084ae3456471689bc84ee09373ad
 The following models were run:
 - Baseline model of dummyclassifier used which gave 63% accuracy
 - Random Forest with hyperparameter tuning using iterations and AUC vs Parameter range plots
