@@ -38,9 +38,9 @@ The following models were run:
 - Baseline model of dummyclassifier used which gave 63% accuracy
 - Random Forest with hyperparameter tuning using iterations and AUC vs Parameter range plots
 
-<img src=plot_downloads/AUCvsTreeDepth.png alt="AUC vs TreeDepth RandomForest Model" width="450"/>
+<img src=plot_downloads/AUCvsTreeDepth.png alt="AUC vs TreeDepth RandomForest Model" width="600"/>
 
-<img src=plot_downloads/AUCvsmin_samples.png alt="AUC vs MinimumSamples RandomForest Model]" width="350"/>
+<img src=plot_downloads/AUCvsmin_samples.png alt="AUC vs MinimumSamples RandomForest Model]" width="600"/>
 
 - Logistic Regression with hyperparameter tuning in solver type, C parameter and penalty
 - XGBoost with and without Gridsearch.
@@ -48,9 +48,9 @@ The following models were run:
 
 Logistic Regression with l1 penalty, bilinear solver gave the best results.
 
-<img src=plot_downloads/ROCcurve_logreg.png alt="ROC Curve For LogReg Model" width="350"/>
+<img src=plot_downloads/ROCcurve_logreg.png alt="ROC Curve For LogReg Model" width="600"/>
 
-<img src=plot_downloads/confmatrix_logeg.png alt="LogReg Confusion Matrix" width="350"/>
+<img src=plot_downloads/confmatrix_logeg.png alt="LogReg Confusion Matrix" width="600"/>
 
 
 The following is a summary of accuracy, recall, percision and f1 socres of the top four models:
