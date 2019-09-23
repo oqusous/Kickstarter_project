@@ -40,7 +40,7 @@ The following models were run:
 
 <img src=plot_downloads/AUCvsTreeDepth.png alt="AUC vs TreeDepth RandomForest Model" width="450"/>
 
-<img src=plot_downloads/AUCvsmin_samples.png alt="AUC vs MinimumSamples RandomForest Model]" width="450"/>
+<img src=plot_downloads/AUCvsmin_samples.png alt="AUC vs MinimumSamples RandomForest Model]" width="350"/>
 
 - Logistic Regression with hyperparameter tuning in solver type, C parameter and penalty
 - XGBoost with and without Gridsearch.
@@ -48,9 +48,10 @@ The following models were run:
 
 Logistic Regression with l1 penalty, bilinear solver gave the best results.
 
-![ROC Curve For LogReg Model](plot_downloads/ROCcurve_logreg.png)
+<img src=plot_downloads/ROCcurve_logreg.png alt="ROC Curve For LogReg Model" width="350"/>
 
-![LogReg Confusion Matrix](plot_downloads/confmatrix_logeg.png)
+<img src=plot_downloads/confmatrix_logeg.png alt="LogReg Confusion Matrix" width="350"/>
+
 
 The following is a summary of accuracy, recall, percision and f1 socres of the top four models:
 
