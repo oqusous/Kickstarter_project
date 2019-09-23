@@ -38,9 +38,9 @@ The following models were run:
 - Baseline model of dummyclassifier used which gave 63% accuracy
 - Random Forest with hyperparameter tuning using iterations and AUC vs Parameter range plots
 
-![AUC vs TreeDepth RandomForest Model](plot_downloads/AUCvsTreeDepth.png)
+<img src=plot_downloads/AUCvsTreeDepth.png alt="AUC vs TreeDepth RandomForest Model" width="450"/>
 
-![AUC vs MinimumSamples RandomForest Model](plot_downloads/AUCvsmin_samples.png)
+<img src=plot_downloads/AUCvsmin_samples.png alt="AUC vs MinimumSamples RandomForest Model]" width="450"/>
 
 - Logistic Regression with hyperparameter tuning in solver type, C parameter and penalty
 - XGBoost with and without Gridsearch.
