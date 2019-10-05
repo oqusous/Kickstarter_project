@@ -23,11 +23,10 @@ The rest were eliminated due to repetation, high NAN numbers, potential of data 
 
 Out of the aforementioned features the following were engineered:
 - Continuous Features:
-    - Log(df['time_allowed']) and Log(df['goal'])
-    - df['time_allowed'] = df['deadline']-df['created_at'] # in days
-    - outliers = df[(df['time_allowed'] > 5000) & (df['goal'] > 2e6)]
+    - Log of time allowed (deadline-created_at) and Log of 'goal'
+    - Data was filtered so that time allowed is less than 5000 days and goal less than 2 million USD.
 - Categorical Features:
-    - Converted to dummies: df[['category', 'staff_pick', 'country']]
+    - 'category', 'staff_pick', 'country' were all converted to dummies
 
 ![Features Pair PLot](plot_downloads/pairplots.png)
 
