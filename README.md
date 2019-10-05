@@ -2,15 +2,15 @@
 
 The aim of this project is to build a Classification Model to predict whether or not a new project on Kickstarter will likely succeed or fail.
 
+## Data Source
 Data was obtained from:
 
 https://webrobots.io/kickstarter-datasets/
 
-A total of 9338 points. Aim to keep 5000 or more (duplicates, Nans, etc...). 
+A total of 9338 points. Aim to keep 5000 or more (duplicates, Nans, etc...). The Kickstarter project categories were a mix and years ranged from 2008-2019.
 
-The data had the following column:
-['backers_count', 'blurb', 'category', 'converted_pledged_amount', 'country', 'created_at', 'creator', 'currency', 'currency_symbol', 'currency_trailing_code', 'current_currency', 'deadline', ‘'disable_communication', 'friends', 'fx_rate', 'goal', 'id', 'is_backing', 'is_starrable', 'is_starred', 'launched_at', 'location', 'name', 'permissions', 'photo', 'pledged', 'profile', 'slug', 'source_url', 'spotlight', 'staff_pick', 'state', 'state_changed_at', 'static_usd_rate', 'urls', 'usd_pledged', 'usd_type']
 
+## Features
 The final features chosen were:
 - category: Film, Music, Fashion etc..
 - location: country and state converted to continents to balance data
@@ -21,36 +21,36 @@ The final features chosen were:
 - goal: desired amount of money to succeed amount of money
 The rest were eliminated due to repetation, high NAN numbers, potential of data leakage and based on domain knowledge and logic.
 
-The target was 'state' which shows whether the project was  successful, failed, suspended, live, or cancelled. The live, cancelled and suspended states were eliminated as it was difficult to determine the reason for for cancellation/suspension and live projects have no outcome yet.
-
-Out of the aforementioned features the following was created:
+Out of the aforementioned features the following were engineered:
 - Continuous Features:
-    - Log(df['time_allowed']) and Log(df['goal'])
-    - df['time_allowed'] = df['deadline']-df['created_at'] # in days
-    - outliers = df[(df['time_allowed'] > 5000) & (df['goal'] > 2e6)]
+    - Log of time allowed (deadline-created_at) and Log of 'goal'
+    - Data was filtered so that time allowed is less than 5000 days and goal less than 2 million USD.
 - Categorical Features:
-    - Converted to dummies: df[['category', 'staff_pick', 'country']]
+    - 'category', 'staff_pick', 'country' were all converted to dummies
 
 ![Features Pair PLot](plot_downloads/pairplots.png)
 
+## Target
+The target was 'state' which shows whether the project was  successful, failed, suspended, live, or cancelled. The live, cancelled and suspended states were eliminated as it was difficult to determine the reason for for cancellation/suspension and live projects have no outcome yet.
 
+## Modelling
 The following models were run:
 - Baseline model of dummyclassifier used which gave 63% accuracy
 - Random Forest with hyperparameter tuning using iterations and AUC vs Parameter range plots
 
-<img src=plot_downloads/AUCvsTreeDepth.png alt="AUC vs TreeDepth RandomForest Model" width="450"/>
+<img src=plot_downloads/AUCvsTreeDepth.png alt="AUC vs TreeDepth RandomForest Model" width="600"/>
 
-<img src=plot_downloads/AUCvsmin_samples.png alt="AUC vs MinimumSamples RandomForest Model]" width="350"/>
+<img src=plot_downloads/AUCvsmin_samples.png alt="AUC vs MinimumSamples RandomForest Model]" width="600"/>
 
 - Logistic Regression with hyperparameter tuning in solver type, C parameter and penalty
 - XGBoost with and without Gridsearch.
 - All models were validated first with training data and then tested with the testing data.
 
-Logistic Regression with l1 penalty, bilinear solver gave the best results.
+**Logistic Regression with l1 penalty, bilinear solver gave the best results for accuracy and precision.**
 
-<img src=plot_downloads/ROCcurve_logreg.png alt="ROC Curve For LogReg Model" width="350"/>
+<img src=plot_downloads/ROCcurve_logreg.png alt="ROC Curve For LogReg Model" width="600"/>
 
-<img src=plot_downloads/confmatrix_logeg.png alt="LogReg Confusion Matrix" width="350"/>
+<img src=plot_downloads/confmatrix_logeg.png alt="LogReg Confusion Matrix" width="600"/>
 
 
 The following is a summary of accuracy, recall, percision and f1 socres of the top four models:
@@ -59,10 +59,11 @@ The following is a summary of accuracy, recall, percision and f1 socres of the t
 |------------------------|----------------|----------------|----------------|----------------|
 |Random Forest Tuned     |77.2%           |85.9%           |79.5%           |82.6%           |
 |LogReg                  |79.6%           |82.2%           |84.5%           |83.3%           |
-|LogReg Tuned            |80.0%           |82.0%           |85.2%           |83.6%           |
+|**LogReg Tuned**        |**80.0%**       |**82.0%**       |**85.2%**       |**83.6%**       |
 |XGBoost with GridSearch |78.4%           |88.0%           |79.5%           |83.5%           |
 
 
+## Further Imporvements
 The following can be used to improve on the model:
 
 - Quantify quality of the project’s presentation through recognising the use of videos, images and rewards.
