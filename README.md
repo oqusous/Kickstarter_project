@@ -47,7 +47,7 @@ The following models were run:
 - XGBoost with and without Gridsearch.
 - All models were validated first with training data and then tested with the testing data.
 
-**Logistic Regression with l1 penalty, bilinear solver gave the best results.**
+**Logistic Regression with l1 penalty, bilinear solver gave the best results for accuracy and precision.**
 
 <img src=plot_downloads/ROCcurve_logreg.png alt="ROC Curve For LogReg Model" width="600"/>
 
