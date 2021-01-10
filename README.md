@@ -18,7 +18,7 @@ The final features chosen were:
 - deadline: deadline set for achieving the desired
 - name: projects name
 - staff_pick: projects highlighted on homepage
-- goal: desired amount of money to succeed amount of money
+- goal: desired amount of money to succeed amount of money <br>
 The rest were eliminated due to repetation, high NAN numbers, potential of data leakage and based on domain knowledge and logic.
 
 Out of the aforementioned features the following were engineered:
